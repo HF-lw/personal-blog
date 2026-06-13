@@ -1,341 +1,275 @@
 /* ============================================================
-   data.js — 站点数据（示例占位内容）
+   data.js — 站点数据（罗旺 · 个人作品集 / 博客）
    ------------------------------------------------------------
-   ★★★ 这里就是你要替换的地方 ★★★
-   全部内容都是演示用的「陈星河 / Stellar」虚构人物，
-   把下面的文字、项目、文章换成你自己的即可，无需改动其它文件。
-   （详细替换说明见 README.md）
+   ★★★ 这里就是你要替换 / 维护的地方 ★★★
+   想改文字、加项目、写文章，只动这个文件即可，无需碰其它代码。
+   （详细说明见 README.md）
    ============================================================ */
 window.SITE_DATA = {
 
   /* ---------- 站点基础信息 ---------- */
   site: {
-    name: "陈星河",                       // 你的名字
-    initials: "星",                        // Logo 里显示的字（1个字或字母）
-    role: "创意开发者 · 设计工程师",        // 一句话头衔
-    tagline: "把想法变成会呼吸的界面。",     // 标语
-    email: "hello@example.com",            // 联系邮箱（示例）
+    name: "罗旺",                              // 你的名字
+    initials: "罗",                            // Logo / 头像里显示的字
+    role: "数据标注 · AI 训练师",               // 一句话头衔
+    tagline: "以工程师的严谨，为 AI 打磨高质量数据。", // 标语（显示在页脚）
+    email: "m16623701959@163.com",             // 联系邮箱
+    phone: "17823342216",                      // ⚠ 公开网站会被所有人看到，想隐藏就删掉这行并移除下方“电话”social
     location: "中国 · 重庆",
-    avatarGlyph: "星",                     // 头像里的大字
-    resumeUrl: "#",                        // 简历下载链接（可留 #）
+    avatarGlyph: "罗",                         // 关于页大头像里的字
+    resumeUrl: "#",                            // 简历下载链接（暂留 #）
     socials: [
-      { name: "GitHub",  url: "https://github.com",   icon: "github" },
-      { name: "邮箱",     url: "mailto:hello@example.com", icon: "mail" },
-      { name: "微博",     url: "#", icon: "weibo" },
-      { name: "稀土掘金",  url: "#", icon: "pen" }
+      { name: "GitHub", url: "https://github.com/HF-lw", icon: "github" },
+      { name: "邮箱",   url: "mailto:m16623701959@163.com", icon: "mail" },
+      { name: "电话",   url: "tel:17823342216", icon: "phone" }
     ],
+    // 首页/关于页的数字（首页只显示前 3 个）
     stats: [
-      { num: 28, suffix: "+", label: "完成项目" },
-      { num: 40, suffix: "+", label: "技术文章" },
-      { num: 3,  suffix: "年", label: "实践经验" },
-      { num: 12, suffix: "k", label: "累计阅读" }
+      { num: 10, suffix: "%", label: "专业排名前" },
+      { num: 4,  suffix: "年", label: "电子工科训练" },
+      { num: 2,  suffix: "+", label: "软硬件实战项目" },
+      { num: 3,  suffix: "轮", label: "严格回归测试" }
     ]
   },
 
-  /* ---------- 技能 ---------- */
+  /* ---------- 技能（3 组，每组 3 条带百分比） ---------- */
   skillGroups: [
     {
-      title: "前端工程",
+      title: "数据 & AI 训练",
+      icon: "sparkles",
+      skills: [
+        { name: "数据标注与分类", pct: 80 },
+        { name: "数据校验 / 质检", pct: 82 },
+        { name: "语料与文本整理", pct: 75 }
+      ]
+    },
+    {
+      title: "编程 & 数据基础",
       icon: "code",
       skills: [
-        { name: "HTML / CSS", pct: 95 },
-        { name: "JavaScript / TS", pct: 90 },
-        { name: "React / Vue", pct: 85 }
+        { name: "C 语言程序设计", pct: 85 },
+        { name: "数据结构与算法", pct: 78 },
+        { name: "Excel / 数据记录", pct: 85 }
       ]
     },
     {
-      title: "设计 & 动效",
-      icon: "palette",
+      title: "电子 & 工程素养",
+      icon: "cpu",
       skills: [
-        { name: "UI / 视觉设计", pct: 88 },
-        { name: "动效 / 交互", pct: 82 },
-        { name: "Figma", pct: 90 }
-      ]
-    },
-    {
-      title: "工程能力",
-      icon: "rocket",
-      skills: [
-        { name: "Node.js", pct: 78 },
-        { name: "性能优化", pct: 80 },
-        { name: "Git / 协作", pct: 92 }
+        { name: "STM32 / 嵌入式", pct: 80 },
+        { name: "电路与硬件调试", pct: 78 },
+        { name: "软件测试 / 质量管理", pct: 85 }
       ]
     }
   ],
 
   // 技能小标签云
   stack: [
-    "React", "Vue", "TypeScript", "Vite", "Tailwind",
-    "Node.js", "Three.js", "GSAP", "Figma", "Python", "Git", "Webpack"
+    "C 语言", "数据结构", "STM32", "Keil uVision5", "嵌入式系统",
+    "单片机", "电路分析", "数字电子技术", "软件测试", "黑盒测试",
+    "数据标注", "Excel"
   ],
 
-  /* ---------- 时间线（关于页） ---------- */
+  /* ---------- 经历时间线（关于页，时间倒序） ---------- */
+  // 注：项目年份是我按常理估的，不准的话告诉我改
   timeline: [
     {
-      date: "2025 — 至今",
-      title: "自由职业 · 独立开发",
-      org: "Freelance",
-      desc: "为初创团队提供从设计到落地的一站式前端方案，专注界面美感与交互体验。"
+      date: "2026 · 求职中",
+      title: "求职方向：数据标注 / AI 训练师",
+      org: "重庆 · 全职机会",
+      desc: "希望把电子工科的严谨与软件测试的质量意识，用到 AI 数据标注与训练里，并持续学习主流标注工具与任务规范。"
     },
     {
-      date: "2023 — 2025",
-      title: "前端开发工程师",
-      org: "某科技公司（示例）",
-      desc: "负责核心产品 Web 端开发与组件库建设，推动页面性能与可维护性的持续优化。"
+      date: "2025 · 课程设计",
+      title: "STM32 温湿度监测系统",
+      org: "软硬件协同 · 个人项目",
+      desc: "以 STM32F103C8T6 为主控，集成 DHT11 传感器与 OLED 显示屏，完成环境数据的采集与显示；用 Keil 编写 C 代码，调试硬件接口与通信协议。"
     },
     {
-      date: "2022 — 2023",
-      title: "Web 前端实习",
-      org: "某互联网公司（示例）",
-      desc: "参与营销活动页与数据看板开发，积累工程化与跨团队协作经验。"
+      date: "2024 · 团队项目",
+      title: "学生成绩管理系统 · 软件测试",
+      org: "测试模块负责人",
+      desc: "负责测试用例设计与执行，黑盒覆盖功能 / 边界 / 异常场景，用 Excel 记录缺陷、提交 Bug 报告，完成三轮回归测试。"
     },
     {
-      date: "2018 — 2022",
-      title: "计算机相关专业 · 本科",
-      org: "某大学（示例）",
-      desc: "系统学习计算机基础与软件工程，期间持续做个人项目并撰写技术博客。"
+      date: "2022 — 2026",
+      title: "电子科学与技术 · 本科",
+      org: "重庆对外经贸学院",
+      desc: "专业排名前 10%；主修信号与系统、模拟 / 数字电子技术、单片机、数据结构等；获校级程序设计大赛三等奖。"
     }
   ],
 
   /* ---------- 项目作品 ---------- */
-  // gradient: 卡片封面渐变（用 CSS 渐变字符串）
+  // gradient: 卡片封面渐变；glyph: 封面上的字母标记
   projects: [
     {
-      slug: "aurora-ui",
-      title: "Aurora 设计系统",
-      category: "Design System",
-      glyph: "Au",
+      slug: "stm32-env-monitor",
+      title: "STM32 温湿度环境监测系统",
+      category: "嵌入式 · 课程设计",
+      glyph: "Em",
       gradient: "linear-gradient(135deg,#6366f1,#a855f7,#ec4899)",
-      desc: "一套以毛玻璃和渐变为核心的现代组件库，含 40+ 可定制组件与暗色主题。",
-      tags: ["React", "TypeScript", "Storybook"],
+      desc: "以 STM32F103C8T6 为主控，集成 DHT11 温湿度传感器与 OLED 显示屏，实现环境数据的实时采集与显示。用 Keil uVision5 编写 C 代码，完成硬件接口与单总线通信协议的调试，锻炼了软硬件协同与问题排查能力。",
+      tags: ["STM32", "C 语言", "Keil", "传感器"],
       featured: true,
       url: "#",
       repo: "#"
     },
     {
-      slug: "nebula-dashboard",
-      title: "Nebula 数据看板",
-      category: "Web App",
-      glyph: "Ne",
+      slug: "score-system-testing",
+      title: "学生成绩管理系统 · 软件测试",
+      category: "软件测试 · 质量保障",
+      glyph: "Qa",
       gradient: "linear-gradient(135deg,#22d3ee,#6366f1,#a855f7)",
-      desc: "实时数据可视化平台，支持自定义图表、拖拽布局与多端自适应。",
-      tags: ["Vue", "ECharts", "WebSocket"],
+      desc: "在基于 C 语言的成绩管理系统中负责测试模块的设计与执行：用黑盒测试覆盖功能、边界与异常场景，以 Excel 记录缺陷并提交 Bug 报告，协助开发定位问题，完成三轮回归测试，沉淀出一套规范的用例设计与缺陷管理流程。",
+      tags: ["软件测试", "黑盒测试", "缺陷管理", "Excel"],
       featured: true,
       url: "#",
       repo: "#"
     },
     {
-      slug: "motion-lab",
-      title: "Motion Lab 动效实验室",
-      category: "Creative",
-      glyph: "ML",
-      gradient: "linear-gradient(135deg,#f472b6,#a855f7,#6366f1)",
-      desc: "收集与复刻精彩 Web 动效的开源合集，每个案例都附带可复制的代码。",
-      tags: ["GSAP", "Three.js", "Canvas"],
-      featured: true,
-      url: "#",
-      repo: "#"
-    },
-    {
-      slug: "pocket-notes",
-      title: "Pocket 笔记",
-      category: "Productivity",
-      glyph: "Pk",
-      gradient: "linear-gradient(135deg,#34d399,#22d3ee,#6366f1)",
-      desc: "极简本地优先的 Markdown 笔记应用，支持双链、标签与离线使用。",
-      tags: ["React", "IndexedDB", "PWA"],
-      featured: false,
-      url: "#",
-      repo: "#"
-    },
-    {
-      slug: "palette-pick",
-      title: "PalettePick 取色器",
-      category: "Tool",
-      glyph: "Pp",
+      slug: "programming-contest",
+      title: "校级程序设计大赛 · 三等奖",
+      category: "竞赛 · 算法编程",
+      glyph: "Pc",
       gradient: "linear-gradient(135deg,#fbbf24,#f472b6,#a855f7)",
-      desc: "面向设计师的智能配色工具，一键生成无障碍对比度达标的渐变方案。",
-      tags: ["TypeScript", "Color", "a11y"],
-      featured: false,
-      url: "#",
-      repo: "#"
-    },
-    {
-      slug: "story-flow",
-      title: "StoryFlow 博客引擎",
-      category: "Open Source",
-      glyph: "Sf",
-      gradient: "linear-gradient(135deg,#818cf8,#c084fc,#f472b6)",
-      desc: "零配置的静态博客生成器，Markdown 即写即得，主题优雅且高度可定制。",
-      tags: ["Node.js", "Markdown", "SSG"],
-      featured: false,
+      desc: "在校级程序设计大赛中获三等奖。围绕算法设计与 C 语言实现，在限定时间内完成题目分析、编码与调试，检验了数据结构功底与高压下的问题拆解能力。",
+      tags: ["C 语言", "数据结构", "算法"],
+      featured: true,
       url: "#",
       repo: "#"
     }
   ],
 
   /* ---------- 博客文章 ---------- */
-  // body 为 HTML 字符串，按 .prose 排版渲染
+  // body 为 HTML 字符串，按 .prose 排版渲染。以下为初稿（你的视角），可随意改删。
   posts: [
     {
-      slug: "glassmorphism-guide",
-      title: "毛玻璃设计完全指南：从原理到落地",
-      category: "设计",
-      date: "2026-05-28",
-      readMins: 8,
-      glyph: "Gl",
-      gradient: "linear-gradient(135deg,#6366f1,#a855f7,#ec4899)",
-      tags: ["设计", "CSS", "UI"],
-      excerpt: "毛玻璃（Glassmorphism）不只是加个模糊那么简单。本文拆解它的视觉层级、对比度与性能取舍，并给出可直接复用的代码片段。",
-      body: `
-<p>毛玻璃风格之所以迷人，在于它在「通透」与「层次」之间找到了平衡：背景透出来，但又不至于喧宾夺主。要做好它，核心是三件事——<strong>背景模糊、半透明填充、细腻的边框高光</strong>。</p>
-<h2>一、最小可用配方</h2>
-<p>一个合格的玻璃卡片，只需要四行关键属性：</p>
-<pre><code>.glass {
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(18px);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 18px;
-}</code></pre>
-<p>注意 <code>backdrop-filter</code> 需要同时写 <code>-webkit-</code> 前缀以兼容 Safari。</p>
-<h2>二、可读性是底线</h2>
-<p>玻璃面板最大的陷阱是<strong>文字对比度不足</strong>。建议给面板背后铺一层足够暗（或足够亮）的渐变，并保证正文对比度不低于 WCAG AA 的 4.5:1。</p>
-<blockquote>好看与可用从来不是单选题。先保证能读清楚，再谈氛围感。</blockquote>
-<h2>三、性能取舍</h2>
-<p><code>blur()</code> 是 GPU 合成开销较大的属性。页面里玻璃层不宜过多，移动端可适当降低模糊半径。给会动的元素加上 <code>will-change: transform</code> 能减少重绘抖动。</p>
-<h3>小结</h3>
-<p>毛玻璃是「克制」的艺术：模糊、透明、高光三者配比得当，界面就会自然透出高级感。把上面的配方收进你的组件库，下次三分钟就能搭出一张漂亮的玻璃卡。</p>
-`
-    },
-    {
-      slug: "css-gradient-art",
-      title: "用纯 CSS 画出会流动的渐变背景",
-      category: "前端",
-      date: "2026-05-12",
-      readMins: 6,
-      glyph: "Gr",
-      gradient: "linear-gradient(135deg,#22d3ee,#6366f1,#a855f7)",
-      tags: ["前端", "CSS", "动效"],
-      excerpt: "不用一行 JavaScript，也能让背景里的极光缓缓流动。聊聊径向渐变、模糊光斑与关键帧的组合拳。",
-      body: `
-<p>本站的背景就是纯 CSS 实现的——三团径向渐变光斑，叠加缓慢的位移动画，再用大半径模糊把边缘揉开，极光感就出来了。</p>
-<h2>核心思路</h2>
-<p>用伪元素承载光斑，固定定位铺满视口，然后让它在 <code>@keyframes</code> 里慢慢漂移：</p>
-<pre><code>body::before {
-  content: "";
-  position: fixed;
-  width: 60vw; height: 60vw;
-  background: radial-gradient(circle, #7c3aed, transparent 62%);
-  filter: blur(90px);
-  animation: drift 22s ease-in-out infinite alternate;
-}
-@keyframes drift {
-  to { transform: translate(8vw, 10vh) scale(1.12); }
-}</code></pre>
-<h2>三团光的配色</h2>
-<p>选三种相邻色相（如靛蓝 → 紫 → 粉），让它们在不同角落漂移、节奏各不相同，叠加后就会不断产生新的色彩过渡，永远不重复。</p>
-<h3>记得照顾「减少动态」偏好</h3>
-<p>用 <code>@media (prefers-reduced-motion: reduce)</code> 关掉动画，是对前庭敏感用户的基本尊重。</p>
-`
-    },
-    {
-      slug: "frontend-performance",
-      title: "前端性能优化：我常用的 7 个高性价比手段",
-      category: "工程",
-      date: "2026-04-20",
-      readMins: 10,
-      glyph: "Pf",
-      gradient: "linear-gradient(135deg,#f472b6,#a855f7,#6366f1)",
-      tags: ["工程", "性能"],
-      excerpt: "性能优化不必一上来就上重武器。这份清单从「改一行就有效」开始，覆盖加载、渲染与运行时三个层面。",
-      body: `
-<p>性能优化最忌讳「为优化而优化」。先用 Lighthouse 量出瓶颈，再对症下药。下面是我在真实项目里反复验证过的 7 个手段，按性价比排序。</p>
-<h2>加载层</h2>
-<ul>
-<li><strong>图片懒加载</strong>：给非首屏图片加 <code>loading="lazy"</code>，几乎零成本。</li>
-<li><strong>字体优化</strong>：<code>font-display: swap</code> 避免文字不可见；只加载需要的字重。</li>
-<li><strong>资源预连接</strong>：对关键第三方域名用 <code>&lt;link rel="preconnect"&gt;</code>。</li>
-</ul>
-<h2>渲染层</h2>
-<ul>
-<li><strong>避免布局抖动</strong>：批量读写 DOM，别在循环里交替触发 reflow。</li>
-<li><strong>合成层提升</strong>：动画只动 <code>transform</code> 和 <code>opacity</code>。</li>
-</ul>
-<h2>运行时</h2>
-<ul>
-<li><strong>防抖与节流</strong>：滚动、输入、resize 事件务必包一层。</li>
-<li><strong>虚拟列表</strong>：长列表只渲染可视区域。</li>
-</ul>
-<blockquote>先测量，再优化，最后再测量验证。没有数据的优化都是猜。</blockquote>
-`
-    },
-    {
-      slug: "design-to-code",
-      title: "从设计稿到代码：我如何还原 100% 的细节",
-      category: "设计",
-      date: "2026-03-30",
+      slug: "testing-to-annotation",
+      title: "从软件测试到数据标注：质量意识是相通的",
+      category: "方法",
+      date: "2026-06-02",
       readMins: 7,
-      glyph: "Dc",
-      gradient: "linear-gradient(135deg,#34d399,#22d3ee,#6366f1)",
-      tags: ["设计", "前端", "协作"],
-      excerpt: "像素级还原靠的不是死磕，而是一套可复用的流程：先对齐设计变量，再搭间距系统，最后处理边界情况。",
+      glyph: "Td",
+      gradient: "linear-gradient(135deg,#6366f1,#a855f7,#ec4899)",
+      tags: ["方法", "测试", "数据标注"],
+      excerpt: "做过软件测试后我发现，数据标注和测试在底层逻辑上惊人地相似——都是在和「质量」死磕。聊聊这两件事的共通之处。",
       body: `
-<p>「还原度」是前端和设计师之间最容易起摩擦的地方。与其逐像素对比，不如把设计语言先翻译成<strong>一套共享的变量</strong>。</p>
-<h2>第一步：抽取设计令牌</h2>
-<p>把颜色、间距、圆角、阴影、字号都变成 CSS 变量。设计稿改了，只动变量，全站同步。</p>
-<h2>第二步：建立间距节奏</h2>
-<p>采用 4 或 8 的倍数作为间距基准，页面会自然产生秩序感。用 <code>clamp()</code> 让间距随视口平滑缩放。</p>
-<h2>第三步：处理边界情况</h2>
-<p>设计稿往往只画了「理想态」。真正考验功力的是：超长文本怎么截断、空数据展示什么、加载和错误态长什么样。</p>
-<h3>结语</h3>
-<p>高还原度的秘密，是把一次性的「照着画」变成系统化的「按规则生成」。</p>
+<p>在学生成绩管理系统的项目里，我负责测试模块。三轮回归测试做下来，我对「质量」这件事有了很具体的体感。后来开始了解数据标注，发现两者在底层逻辑上几乎是同一回事。</p>
+<h2>一、都从「规范」开始</h2>
+<p>测试用例要对照需求文档，标注要对照标注规范（Guideline）。没有清晰的标准，测试就是凭感觉点点点，标注就是凭印象打打打——结果必然是一致性灾难。</p>
+<blockquote>好的质量工作，第一步永远是把「什么算对」定义清楚。</blockquote>
+<h2>二、都在和「边界」较劲</h2>
+<p>测试里最容易出 bug 的是边界值和异常输入；标注里最容易标错的，也是那些模棱两可的边界样本。把边界场景穷举出来、约定好怎么处理，是这两件事共同的硬功夫。</p>
+<h2>三、都需要可复现的记录</h2>
+<p>测试时我用 Excel 记录每一个缺陷：复现步骤、期望结果、实际结果。标注同样需要把存疑样本记录下来、形成 FAQ，让团队对齐。可追溯，才能持续改进。</p>
+<h3>小结</h3>
+<p>从测试转向数据标注，对我来说不是跨行，而是把同一种「质量意识」用到新的对象上。工具会变，但对细节的较真是相通的。</p>
 `
     },
     {
-      slug: "indie-hacker-journey",
-      title: "独立开发的第一年：我学到的 5 件事",
-      category: "随笔",
-      date: "2026-02-18",
-      readMins: 9,
-      glyph: "Ih",
-      gradient: "linear-gradient(135deg,#fbbf24,#f472b6,#a855f7)",
-      tags: ["随笔", "成长"],
-      excerpt: "从写代码到对自己负责，独立开发逼着我把产品、营销和自律都补了一遍。记录这一年踩过的坑和想通的事。",
-      body: `
-<p>过去一年我尝试独立做产品，收入起伏、心态过山车，但成长是实打实的。挑五件最重要的分享出来。</p>
-<h2>1. 先卖，再造</h2>
-<p>最贵的教训：埋头三个月做出来的东西没人要。后来学会先用落地页验证需求，再决定要不要写代码。</p>
-<h2>2. 完成 &gt; 完美</h2>
-<p>能上线的 80 分，远胜永远在打磨的 100 分。把功能切小，快速发布，让真实反馈替你做决策。</p>
-<h2>3. 写作就是复利</h2>
-<p>持续写技术博客带来的信任和流量，是任何一次性广告都换不来的。这个网站就是我的「主场」。</p>
-<h2>4. 自律靠系统，不靠意志</h2>
-<p>固定的工作节奏、清晰的待办、可见的进度，比每天和自己较劲有效得多。</p>
-<h2>5. 照顾好身体</h2>
-<p>一个人撑全栈，健康是唯一不能外包的基础设施。</p>
-<blockquote>独立开发不是逃离打工，而是把全部责任都揽到自己身上。累，但很真实。</blockquote>
-`
-    },
-    {
-      slug: "learning-to-learn",
-      title: "高效学习新技术的一套方法论",
-      category: "成长",
-      date: "2026-01-22",
+      slug: "annotation-quality-basics",
+      title: "数据标注新手入门：我理解的标注质量",
+      category: "数据",
+      date: "2026-05-15",
       readMins: 6,
-      glyph: "Lr",
-      gradient: "linear-gradient(135deg,#818cf8,#c084fc,#f472b6)",
-      tags: ["成长", "方法论"],
-      excerpt: "技术更新太快，与其追着学，不如建立一套能迁移的学习框架。聊聊我的「主干—验证—输出」三步法。",
+      glyph: "Dq",
+      gradient: "linear-gradient(135deg,#22d3ee,#6366f1,#a855f7)",
+      tags: ["数据", "AI", "入门"],
+      excerpt: "标注不是「点点鼠标」那么简单。一致性、准确性、规范理解，才是决定数据价值的关键。整理一份我对标注质量的入门理解。",
       body: `
-<p>前端生态每年都在变，焦虑是常态。我的解法不是学得更多，而是学得<strong>更有结构</strong>。</p>
-<h2>第一步：先抓主干</h2>
-<p>任何新框架，先搞清它要解决什么问题、核心心智模型是什么。主干清楚了，枝叶查文档即可。</p>
-<h2>第二步：动手验证</h2>
-<p>读十篇不如写一个 Demo。带着具体问题去用，理解会深刻得多。</p>
-<h2>第三步：输出倒逼输入</h2>
-<p>把学到的写成博客或讲给别人听。讲不清楚的地方，就是你还没真懂的地方。</p>
-<h3>底层逻辑</h3>
-<p>具体的 API 会过时，但「如何快速吃透一个新事物」的能力会跟你一辈子。投资后者。</p>
+<p>很多人以为数据标注就是机械地拉框、打标签。真正了解后才知道，决定一份数据值不值钱的，是它的「质量」。这里整理我对标注质量的几点理解。</p>
+<h2>一、一致性比速度重要</h2>
+<p>同样的样本，今天标 A、明天标 B，模型就会被「教坏」。标注最怕的不是慢，而是同一个人或不同人之间标得不一致。先慢下来对齐标准，比盲目追求产量更有价值。</p>
+<h2>二、吃透规范，而不是死记规范</h2>
+<p>规范文档往往覆盖不到所有情况。理解规范背后「为什么这么定」，遇到没写到的边界样本时，才知道怎么合理推断，而不是卡住或乱标。</p>
+<h2>三、存疑就标记，不要硬猜</h2>
+<ul>
+<li>拿不准的样本，先标记出来集中讨论；</li>
+<li>形成 FAQ / 案例库，沉淀团队共识；</li>
+<li>定期抽检、回头修正，让质量螺旋上升。</li>
+</ul>
+<h3>小结</h3>
+<p>标注是 AI 的「教材编写」。教材里每一个错误，都会被模型忠实地学走。带着这份敬畏去做，质量自然不会差。</p>
+`
+    },
+    {
+      slug: "stm32-retro",
+      title: "STM32 温湿度监测：我的第一个软硬件项目复盘",
+      category: "项目",
+      date: "2026-04-20",
+      readMins: 8,
+      glyph: "St",
+      gradient: "linear-gradient(135deg,#a855f7,#6366f1,#22d3ee)",
+      tags: ["项目", "STM32", "嵌入式"],
+      excerpt: "用 STM32F103 + DHT11 + OLED 做一个温湿度监测系统，听起来简单，真正动手才发现坑都在细节里。复盘一下这个课程设计。",
+      body: `
+<p>这是我第一个完整的软硬件协同项目：用 STM32F103C8T6 作主控，读取 DHT11 的温湿度数据，显示在 OLED 屏上。功能不复杂，但从 0 到跑通，踩的坑值得记一笔。</p>
+<h2>一、时序是第一道坎</h2>
+<p>DHT11 是单总线通信，对时序要求很严。一开始读出来全是乱码，后来用延时函数把时序一点点对准，才稳定拿到数据。这让我真正理解了「通信协议」四个字的分量。</p>
+<h2>二、硬件异常，先怀疑接线和供电</h2>
+<p>调试时数据时有时无，折腾半天发现是杜邦线接触不良。后来养成习惯：现象异常，先排除接线、供电、上拉电阻这些物理层问题，再去怀疑代码。</p>
+<h2>三、把功能拆成可验证的小步</h2>
+<ul>
+<li>先点亮 OLED，确认显示通路；</li>
+<li>再单独读 DHT11，串口打印验证；</li>
+<li>最后才把采集与显示拼起来。</li>
+</ul>
+<blockquote>分步验证，是我从软件测试带到硬件调试里的习惯——每一步都让它「可观测」。</blockquote>
+<h3>小结</h3>
+<p>这个项目让我对「软硬件协同」有了第一手体感：代码逻辑对，不代表系统能跑；真实世界里，细节和耐心才是关键。</p>
+`
+    },
+    {
+      slug: "my-path-to-ai-trainer",
+      title: "电子工科生转向 AI 训练师：我的学习路线",
+      category: "成长",
+      date: "2026-03-18",
+      readMins: 6,
+      glyph: "Ai",
+      gradient: "linear-gradient(135deg,#fbbf24,#f472b6,#a855f7)",
+      tags: ["成长", "AI", "求职"],
+      excerpt: "学电子的我，为什么想做 AI 训练师？把这条转向背后的思考，和我正在补的功课，都坦诚地写下来。",
+      body: `
+<p>我的专业是电子科学与技术，但求职方向定在了数据标注 / AI 训练师。常有人问我为什么「跨」过来，这篇就把我的想法理一理。</p>
+<h2>为什么是这个方向</h2>
+<p>做软件测试时，我发现自己很享受那种「和质量死磕」的过程；而 AI 训练的核心，恰恰是用高质量数据去打磨模型。这件事既需要细心和耐心，又站在技术前沿，正好对上我的性格和兴趣。</p>
+<h2>我的底子能用上什么</h2>
+<ul>
+<li><strong>编程基础</strong>：C 语言、数据结构，让我能看懂技术语境，必要时写点脚本处理数据；</li>
+<li><strong>质量意识</strong>：测试经验让我天然在意一致性、边界与可复现；</li>
+<li><strong>工科训练</strong>：四年的逻辑与动手训练，让我学新东西不怵。</li>
+</ul>
+<h2>正在补的功课</h2>
+<p>我在系统地了解主流标注工具、不同任务（分类 / 检测 / NLP 语料）的规范，以及数据在大模型训练里扮演的角色。边学边把笔记写在这个博客上。</p>
+<h3>小结</h3>
+<p>转向不是否定过去，而是把过去的能力，放到一个我更想长期投入的方向上。</p>
+`
+    },
+    {
+      slug: "blackbox-test-cases",
+      title: "用黑盒测试的思路设计测试用例",
+      category: "测试",
+      date: "2026-02-22",
+      readMins: 7,
+      glyph: "Bb",
+      gradient: "linear-gradient(135deg,#34d399,#22d3ee,#6366f1)",
+      tags: ["测试", "方法", "C 语言"],
+      excerpt: "等价类、边界值、异常场景——黑盒测试用例设计的几个核心方法，结合我在成绩管理系统里的实践讲讲。",
+      body: `
+<p>在成绩管理系统的测试中，我主要用黑盒方法设计用例：不关心内部怎么实现，只关心「给定输入，输出对不对」。几个最实用的方法分享出来。</p>
+<h2>一、等价类划分</h2>
+<p>把输入分成「有效」和「无效」几类，每类挑代表值测试，避免穷举。比如成绩输入，0–100 是有效类，负数、超过 100、非数字都是不同的无效类。</p>
+<h2>二、边界值分析</h2>
+<p>Bug 最爱藏在边界上。所以 0、100 这种临界点，以及它们的相邻值（-1、1、99、101）都要专门测。我在项目里相当一部分缺陷，就是这么挖出来的。</p>
+<h2>三、异常与容错场景</h2>
+<ul>
+<li>空输入、超长输入；</li>
+<li>非法字符、类型错误；</li>
+<li>重复操作、并发场景。</li>
+</ul>
+<blockquote>用户总会用你想不到的方式使用系统。把「异常」当成必测项，而不是事后补丁。</blockquote>
+<h3>小结</h3>
+<p>好的用例设计，本质是用结构化的方法，在有限的时间里覆盖尽量多的风险。这套思维，我现在也用在数据质量的检查上。</p>
 `
     }
   ]
