@@ -449,9 +449,11 @@ body::after {
 
 /* ---------- 滚动揭示动效 ---------- */
 .reveal {
-  opacity: 0;
-  transform: translateY(28px);
   transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.js .reveal {
+  opacity: 1;
+  transform: translateY(18px);
 }
 .reveal.is-visible { opacity: 1; transform: none; }
 .reveal[data-delay="1"] { transition-delay: 0.08s; }

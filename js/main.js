@@ -260,20 +260,28 @@
     var tags = (p.tags || []).map(function (t) { return '<span class="tag">' + esc(t) + "</span>"; }).join("");
     var feat = p.featured ? '<span class="project-card__feat">★ 精选</span>' : "";
     var delay = (i % 3) + 1;
+    var hasUrl = p.url && p.url !== "#";
+    var media = hasUrl
+      ? '<a class="project-card__media" href="' + esc(p.url) + '" target="_blank" rel="noopener" aria-label="' + esc(p.title) + '">'
+      : '<div class="project-card__media" aria-label="' + esc(p.title) + '">';
+    var mediaClose = hasUrl ? "</a>" : "</div>";
+    var action = hasUrl
+      ? '<a class="project-card__link" href="' + esc(p.url) + '" target="_blank" rel="noopener">查看' + svg("arrowUpRight") + "</a>"
+      : '<span class="project-card__link is-disabled" aria-disabled="true">暂无链接</span>';
     return (
       '<article class="project-card reveal" data-delay="' + delay + '">' +
-        '<a class="project-card__media" href="' + esc(p.url || "#") + '" target="_blank" rel="noopener" aria-label="' + esc(p.title) + '">' +
+        media +
           '<span class="cover" style="background:' + esc(p.gradient) + '"></span>' +
           feat +
           '<span class="glyph">' + esc(p.glyph || "★") + "</span>" +
-        "</a>" +
+        mediaClose +
         '<div class="project-card__body">' +
           '<span class="project-card__cat">' + esc(p.category || "") + "</span>" +
           '<h3 class="project-card__title">' + esc(p.title) + "</h3>" +
           '<p class="project-card__desc">' + esc(p.desc || "") + "</p>" +
           '<div class="project-card__foot">' +
             '<div class="tag-row">' + tags + "</div>" +
-            '<a class="project-card__link" href="' + esc(p.url || "#") + '" target="_blank" rel="noopener">查看' + svg("arrowUpRight") + "</a>" +
+            action +
           "</div>" +
         "</div>" +
       "</article>"
@@ -536,6 +544,7 @@
      启动
      ============================================================ */
   function init() {
+    doc.documentElement.classList.add("js");
     buildChrome();
     initTheme();
     initNavAndScroll();

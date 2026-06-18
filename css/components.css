@@ -246,8 +246,12 @@
   color: var(--text);
   white-space: nowrap;
 }
+.project-card__link.is-disabled {
+  color: var(--text-dim);
+  cursor: default;
+}
 .project-card__link svg { width: 16px; height: 16px; transition: transform var(--t-fast); }
-.project-card:hover .project-card__link svg { transform: translate(3px, -3px); }
+.project-card:hover .project-card__link:not(.is-disabled) svg { transform: translate(3px, -3px); }
 
 /* ============================================================
    博客文章卡片
